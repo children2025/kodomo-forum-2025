@@ -1,0 +1,104 @@
+body {
+  font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background: #f8f9fa;
+  color: #333;
+}
+
+header {
+  background: #2c3e50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+nav li {
+  margin: 0 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+main {
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 40px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #2c3e50;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #3498db;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+footer {
+  background: #34495e;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+#countdown {
+  text-align: center;
+  background-color: #ffe9b8;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
+
+#timer {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #e67e22;
+}
+
+#voices .voice {
+  background-color: #fff5e6;
+  border-left: 5px solid #e67e22;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 5px;
+  position: relative;
+}
+
+#voices .comment {
+  font-style: italic;
+  margin-bottom: 5px;
+}
+
+#voices .name {
+  text-align: right;
+  font-weight: bold;
+  color: #555;
+}
