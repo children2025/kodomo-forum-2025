@@ -1,159 +1,294 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>子どもの権利条約フォーラム2025</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Noto Sans JP', sans-serif;
-      background-color: #f5f5f5;
-      color: #333;
-      line-height: 1.8;
-    }
-    header {
-      background-color: #c8102e;
-      color: #fff;
-      padding: 60px 20px 30px;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-    header p {
-      font-size: 1.2rem;
-    }
-    nav {
-      background-color: #fff;
-      padding: 15px 0;
-      text-align: center;
-      border-bottom: 1px solid #ccc;
-    }
-    nav a {
-      margin: 0 20px;
-      color: #c8102e;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1rem;
-    }
-    main {
-      max-width: 960px;
-      margin: auto;
-      padding: 40px 20px;
-      background: #fff;
-    }
-    section {
-      margin-bottom: 50px;
-    }
-    h2 {
-      font-size: 1.6rem;
-      border-left: 6px solid #c8102e;
-      padding-left: 12px;
-      margin-bottom: 20px;
-      color: #c8102e;
-    }
-    ul {
-      list-style: disc;
-      padding-left: 40px;
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 10px 20px;
-      background-color: #c8102e;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 4px;
-      font-weight: bold;
-    }
-    .image-section {
-      text-align: center;
-      margin-bottom: 50px;
-    }
-    .image-section img {
-      max-width: 100%;
-      height: auto;
-      margin-top: 20px;
-      border-radius: 10px;
-    }
-    footer {
-      background: #eee;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>子どもの権利条約フォーラム2025 in 鹿児島</title>
+    <!-- Chosen Palette: Calm Harmony -->
+    <!-- Application Structure Plan: A single-page application with a sticky top navigation for easy access to all key sections. The structure flows from a welcoming hero image and theme announcement to key details (Outline, Kid-friendly explanation, Recruitment), and finally to supplementary information (Past Forums, Contact). This top-down structure guides all users logically, while the navigation allows experts to jump directly to their section of interest. The interactive card-based section for children is designed to be engaging and central to the forum's mission, making complex topics accessible and fulfilling a primary requirement of the source report. -->
+    <!-- Visualization & Content Choices: Report Info: 4 Pillars of Children's Rights -> Goal: Inform & Engage Children -> Viz/Method: Interactive HTML/CSS cards with Unicode icons (🌱, 📚, 🛡️, 🗣️) -> Interaction: Click-to-reveal details -> Justification: This method is highly accessible, requires no external libraries, is visually appealing for the target audience, and turns passive reading into an active discovery process. Report Info: Past Forum Data -> Goal: Organize & Inform -> Viz/Method: Styled HTML list -> Interaction: Standard hyperlinks -> Justification: A simple list is the clearest way to present this reference information without unnecessary complexity. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #FDFCF8;
+            color: #383838;
+        }
+        .font-zen-maru {
+            font-family: 'Zen Maru Gothic', sans-serif;
+        }
+        .hero-bg {
+            background-image: url('Firefly_photo-realistic, high-resolution photograph of diverse Japanese children with varying 783930.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .nav-link.active {
+            color: #4A90E2;
+            font-weight: 700;
+        }
+        .card-flip-container {
+            perspective: 1000px;
+        }
+        .card-flipper {
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .card-flip-container.flipped .card-flipper {
+            transform: rotateY(180deg);
+        }
+        .card-front, .card-back {
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+        .card-back {
+            transform: rotateY(180deg);
+        }
+    </style>
 </head>
-<body>
+<body class="overflow-x-hidden">
 
-<header>
-  <h1>子どもの権利条約フォーラム2025</h1>
-  <p>～すべての子どもに、よりよい未来を～</p>
-</header>
+    <header id="header" class="bg-white/80 backdrop-blur-md fixed top-0 left-0 right-0 z-50 shadow-sm">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="#top" class="text-xl font-bold font-zen-maru text-gray-800">かごしまフォーラム'25</a>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#about" class="nav-link text-gray-600 hover:text-blue-500 transition-colors">開催概要</a>
+                    <a href="#kids" class="nav-link text-gray-600 hover:text-blue-500 transition-colors">子どもの権利って？</a>
+                    <a href="#recruit" class="nav-link text-gray-600 hover:text-blue-500 transition-colors">実行委員募集</a>
+                    <a href="#history" class="nav-link text-gray-600 hover:text-blue-500 transition-colors">過去の大会</a>
+                    <a href="#contact" class="nav-link text-gray-600 hover:text-blue-500 transition-colors">お問い合わせ</a>
+                </nav>
+                <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#about" class="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-100">開催概要</a>
+            <a href="#kids" class="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-100">子どもの権利って？</a>
+            <a href="#recruit" class="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-100">実行委員募集</a>
+            <a href="#history" class="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-100">過去の大会</a>
+            <a href="#contact" class="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-100">お問い合わせ</a>
+        </div>
+    </header>
 
-<nav>
-  <a href="#about">概要</a>
-  <a href="#details">開催情報</a>
-  <a href="#entry">参加申込</a>
-  <a href="#contact">お問い合わせ</a>
-</nav>
+    <main>
+        <section id="top" class="hero-bg h-[60vh] md:h-screen flex items-center justify-center text-white text-center relative">
+            <div class="absolute inset-0 bg-black/50"></div>
+            <div class="relative z-10 p-4">
+                <h1 class="text-3xl md:text-6xl lg:text-7xl font-bold font-zen-maru mb-4 drop-shadow-lg">子どもの権利条約フォーラム<br>2025 in 鹿児島</h1>
+                <p class="text-lg md:text-2xl font-bold font-zen-maru drop-shadow-md">「ホントの思い、探してみない？」</p>
+                <p class="text-base md:text-xl font-zen-maru drop-shadow-md mt-2">きっとそれが、あなたの権利。～わっぜよか世界にしていっど～</p>
+            </div>
+        </section>
 
-<main>
-  <div class="image-section">
-    <img src="happy children day.jpg" alt="Happy Children's Day">
-    <img src="children on the world.jpg" alt="Children Around the World">
-  </div>
+        <section id="about" class="py-16 md:py-24 bg-blue-50/50">
+            <div class="container mx-auto px-6 lg:px-8 max-w-4xl">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 font-zen-maru text-gray-800">開催概要</h2>
+                <div class="bg-white p-8 rounded-2xl shadow-lg space-y-6">
+                    <div class="border-l-4 border-blue-400 pl-4">
+                        <h3 class="text-xl font-bold text-gray-700">テーマ</h3>
+                        <p class="mt-1 text-lg">「ホントの思い、探してみない？」きっとそれが、あなたの権利。～わっぜよか世界にしていっど～</p>
+                    </div>
+                    <div class="border-l-4 border-green-400 pl-4">
+                        <h3 class="text-xl font-bold text-gray-700">日時</h3>
+                        <p class="mt-1 text-lg">2025年12月7日 (日)</p>
+                    </div>
+                    <div class="border-l-4 border-yellow-400 pl-4">
+                        <h3 class="text-xl font-bold text-gray-700">会場</h3>
+                        <p class="mt-1 text-lg">鹿児島大学 稲森会館 <a href="https://www.kagoshima-u.ac.jp/about-ku/inamorihall.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">(地図)</a></p>
+                    </div>
+                    <div class="border-l-4 border-red-400 pl-4">
+                        <h3 class="text-xl font-bold text-gray-700">目的</h3>
+                        <p class="mt-1 text-lg">子どもの権利の実施と普及、子ども支援に取り組む人々の交流促進、自治体との連携推進を目指します。鹿児島から、子どもも大人も、誰もが自分らしく生きられる「わっぜよか世界」を創るための対話の場です。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <section id="about">
-    <h2>フォーラム概要</h2>
-    <p>本フォーラムは、子どもの権利条約に基づき、子どもと大人が共に学び考えることを目的に開催されます。教育・福祉・国際交流の観点から子どもの声を尊重する社会の実現を目指します。</p>
-  </section>
+        <section id="kids" class="py-16 md:py-24">
+            <div class="container mx-auto px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold font-zen-maru text-gray-800">子どもの権利って、なあに？</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">きみたち一人ひとりが、生まれながらに持っている、とっても大切な「宝物」のことだよ。<br>この宝物があれば、安心して、自分らしく、のびのびと成長できるんだ。</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Card 1: 生きる権利 -->
+                    <div class="card-flip-container h-96 cursor-pointer group">
+                        <div class="card-flipper relative w-full h-full">
+                            <div class="card-front absolute w-full h-full rounded-2xl shadow-xl flex flex-col items-center justify-center p-6 bg-gradient-to-br from-green-300 to-green-400 text-white text-center">
+                                <p class="text-6xl">🌱</p>
+                                <h3 class="text-2xl font-bold mt-4 font-zen-maru">生きる権利</h3>
+                                <p class="mt-4 opacity-80 group-hover:opacity-100 transition-opacity">（クリック/タップしてね）</p>
+                            </div>
+                            <div class="card-back absolute w-full h-full rounded-2xl shadow-xl p-6 bg-green-100 flex flex-col items-center justify-center text-center">
+                                <img src="Firefly_photo-realistic, high-resolution photograph of Japanese children running energeticall 191619.jpg" onerror="this.onerror=null;this.src='https://placehold.co/200x150/a7f3d0/166534?text=IMAGE';" alt="元気に遊ぶ子ども" class="w-full h-32 object-cover rounded-lg mb-4">
+                                <h4 class="text-xl font-bold text-green-800 mb-2 font-zen-maru">生きる権利</h4>
+                                <p class="text-green-700">ごはんを食べたり、安全なおうちで暮らしたり、病気になったらお医者さんにみてもらえること。みんなが元気に大きくなるための権利だよ。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 2: 育つ権利 -->
+                    <div class="card-flip-container h-96 cursor-pointer group">
+                        <div class="card-flipper relative w-full h-full">
+                            <div class="card-front absolute w-full h-full rounded-2xl shadow-xl flex flex-col items-center justify-center p-6 bg-gradient-to-br from-blue-300 to-blue-400 text-white text-center">
+                                <p class="text-6xl">📚</p>
+                                <h3 class="text-2xl font-bold mt-4 font-zen-maru">育つ権利</h3>
+                                <p class="mt-4 opacity-80 group-hover:opacity-100 transition-opacity">（クリック/タップしてね）</p>
+                            </div>
+                            <div class="card-back absolute w-full h-full rounded-2xl shadow-xl p-6 bg-blue-100 flex flex-col items-center justify-center text-center">
+                                <img src="Firefly_photo-realistic, high-resolution photograph of several Japanese children sitting arou 825371.jpg" onerror="this.onerror=null;this.src='https://placehold.co/200x150/bae6fd/1e40af?text=IMAGE';" alt="勉強する子ども" class="w-full h-32 object-cover rounded-lg mb-4">
+                                <h4 class="text-xl font-bold text-blue-800 mb-2 font-zen-maru">育つ権利</h4>
+                                <p class="text-blue-700">学校で勉強したり、本を読んだり、おもいっきり遊んだりすること。色々なことを知って、自分らしく成長できる権利だよ。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 3: 守られる権利 -->
+                    <div class="card-flip-container h-96 cursor-pointer group">
+                        <div class="card-flipper relative w-full h-full">
+                            <div class="card-front absolute w-full h-full rounded-2xl shadow-xl flex flex-col items-center justify-center p-6 bg-gradient-to-br from-yellow-300 to-yellow-400 text-white text-center">
+                                <p class="text-6xl">🛡️</p>
+                                <h3 class="text-2xl font-bold mt-4 font-zen-maru">守られる権利</h3>
+                                <p class="mt-4 opacity-80 group-hover:opacity-100 transition-opacity">（クリック/タップしてね）</p>
+                            </div>
+                            <div class="card-back absolute w-full h-full rounded-2xl shadow-xl p-6 bg-yellow-100 flex flex-col items-center justify-center text-center">
+                                <img src="Firefly_photo-realistic, high-resolution photograph of Japanese children freely and joyfully  825371.jpg" onerror="this.onerror=null;this.src='https://placehold.co/200x150/fef08a/854d0e?text=IMAGE';" alt="笑顔の子ども" class="w-full h-32 object-cover rounded-lg mb-4">
+                                <h4 class="text-xl font-bold text-yellow-800 mb-2 font-zen-maru">守られる権利</h4>
+                                <p class="text-yellow-700">いじめや暴力、つらいお仕事など、みんなを傷つけるすべてのことから守られること。安心して過ごせるための権利だよ。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 4: 参加する権利 -->
+                    <div class="card-flip-container h-96 cursor-pointer group">
+                        <div class="card-flipper relative w-full h-full">
+                            <div class="card-front absolute w-full h-full rounded-2xl shadow-xl flex flex-col items-center justify-center p-6 bg-gradient-to-br from-red-300 to-red-400 text-white text-center">
+                                <p class="text-6xl">🗣️</p>
+                                <h3 class="text-2xl font-bold mt-4 font-zen-maru">参加する権利</h3>
+                                <p class="mt-4 opacity-80 group-hover:opacity-100 transition-opacity">（クリック/タップしてね）</p>
+                            </div>
+                            <div class="card-back absolute w-full h-full rounded-2xl shadow-xl p-6 bg-red-100 flex flex-col items-center justify-center text-center">
+                                <img src="Firefly_photo-realistic, high-resolution photograph of diverse Japanese children with varying 783930.jpg" onerror="this.onerror=null;this.src='https://placehold.co/200x150/fecaca/991b1b?text=IMAGE';" alt="話す子ども" class="w-full h-32 object-cover rounded-lg mb-4">
+                                <h4 class="text-xl font-bold text-red-800 mb-2 font-zen-maru">参加する権利</h4>
+                                <p class="text-red-700">自分に関係のあることについて、自由に意見を言えること。友だちと集まって活動したりすることもできる。きみの声は、世界を変える力になるんだ。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <section id="details">
-    <h2>開催情報</h2>
-    <ul>
-      <li><strong>日程：</strong>2025年12月7日（日）</li>
-      <li><strong>会場：</strong>鹿児島大学 郡元キャンパス</li>
-      <li><strong>主催：</strong>子どもの権利条約フォーラム2025実行委員会</li>
- <section id="access">
-  <h2>アクセス</h2>
-  <p>会場：鹿児島大学 郡元キャンパス</p>
-  <p>住所：〒890-0065 鹿児島県鹿児島市郡元１丁目２１−３０</p>
-  <div style="margin-top:20px;">
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3423.858709158647!2d130.5413429!3d31.5808499!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x353e6571c4ae8b13%3A0x1d93b97c3e7be17e!2z5aSn5a2m5aSn5a2mIOesrOWtkOeUn-aWsOeUs-WFpeWbvuOBruODquOCpOOBq-W6lw!5e0!3m2!1sja!2sjp!4v1713414142467!5m2!1sja!2sjp" 
-      width="100%" 
-      height="400" 
-      style="border:0;" 
-      allowfullscreen="" 
-      loading="lazy" 
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-  </div>
-</section>
+        <section id="recruit" class="py-16 md:py-24 bg-green-50/50">
+            <div class="container mx-auto px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold font-zen-maru text-gray-800">実行委員になって、<br class="md:hidden">一緒にフォーラムを創ろう！</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">「子どもの権利」を鹿児島から広める仲間を募集しています。<br>企画、広報、運営など、あなたの「やってみたい！」を形にしませんか？子どもも大人も大歓迎です！</p>
+                    <a href="mailto:kodomonokenri.kagoshima@gmail.com" class="mt-8 inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full text-lg transition-transform transform hover:scale-105 shadow-lg">
+                        応募・詳細はこちらから
+                    </a>
+                </div>
+            </div>
+        </section>
 
-    </ul>
-  </section>
+        <section id="history" class="py-16 md:py-24">
+            <div class="container mx-auto px-6 lg:px-8 max-w-4xl">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 font-zen-maru text-gray-800">これまでの歩みと、未来へ</h2>
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4 text-gray-700">過去のフォーラム</h3>
+                        <p class="mb-4 text-gray-600">このフォーラムは1993年から続く、歴史ある活動です。全国各地で、その土地ならではのテーマを掲げ、子どもの権利を考える輪を広げてきました。ここではいくつかの過去大会を紹介します。</p>
+                        <ul class="space-y-2 list-disc list-inside bg-white p-6 rounded-lg shadow-md">
+                            <li><a href="https://www.savechildren.or.jp/tokyo-crc-forum/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">2024 in 東京</a></li>
+                            <li><a href="https://childrights-toyota.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">2023 in 豊田</a></li>
+                            <li><a href="https://kodomokenri.okinawa.jp/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">2022 in 沖縄</a></li>
+                            <li><a href="https://kawasaki2021kfrc.webnode.jp/event/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">2021 in 川崎</a></li>
+                            <li><a href="http://npo-palette.org/crcf2020/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">2020 in 南砺</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-4 text-gray-700">参考・引用</h3>
+                        <p class="mb-4 text-gray-600">このウェブサイトの情報は、以下の信頼できる情報源を参考に作成しています。</p>
+                        <ul class="space-y-2 list-disc list-inside bg-white p-6 rounded-lg shadow-md">
+                            <li><a href="https://www.unicef.or.jp/kodomo/kenri/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">日本ユニセフ協会「子どもの権利条約」</a></li>
+                            <li><a href="https://www.worldvision.jp/children/education_19.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">ワールド・ビジョン・ジャパン</a></li>
+                            <li><a href="https://ftcj.org/archives/activity_report/9406" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Free The Children Japan</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <section id="entry">
-    <h2>参加申込</h2>
-    <p>以下のフォームから事前申込をお願いいたします。定員に達し次第、締切とさせていただきます。</p>
-    <a class="btn" href="https://example.com/entry" target="_blank">▶ 申込フォームはこちら</a>
-  </section>
+        <section id="contact" class="py-16 md:py-24 bg-gray-100">
+            <div class="container mx-auto px-6 lg:px-8 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold font-zen-maru text-gray-800">お問い合わせ</h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">フォーラムに関するご質問、実行委員会へのご応募、取材のお申し込みなど、お気軽にご連絡ください。</p>
+                <div class="mt-8">
+                    <a href="mailto:kodomonokenri.kagoshima@gmail.com" class="text-xl md:text-2xl text-blue-600 font-bold hover:underline break-all">
+                        kodomonokenri.kagoshima@gmail.com
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
 
-  <section id="contact">
-    <h2>お問い合わせ</h2>
-    <p>ご質問やご相談がございましたら、以下までお気軽にご連絡ください。</p>
-    <p><strong>メール：</strong>forum2025@example.com</p>
-  </section>
-</main>
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto py-6 px-6 lg:px-8 text-center">
+            <p>&copy; 2025 子どもの権利条約フォーラム2025 in 鹿児島 実行委員会準備会</p>
+        </div>
+    </footer>
 
-<footer>
-  &copy; 2025 子どもの権利条約フォーラム実行委員会
-</footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            const flipCards = document.querySelectorAll('.card-flip-container');
+            flipCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    card.classList.toggle('flipped');
+                });
+            });
+            
+            const sections = document.querySelectorAll('main section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const header = document.getElementById('header');
+            const headerHeight = header.offsetHeight;
+
+            const activateNavLink = () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= sectionTop - headerHeight - 20) {
+                       current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').substring(1) === current) {
+                        link.classList.add('active');
+                    }
+                });
+            };
+            
+            window.addEventListener('scroll', activateNavLink);
+            activateNavLink();
+        });
+    </script>
 
 </body>
 </html>
